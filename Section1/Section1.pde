@@ -37,13 +37,26 @@ class Visualizer {
     //the values in the array.
     //Negative values are red, and go below the line.
     //Positive values are green and go above the line.
+    float currentx = x;
+    for (float value : values){
+      if (value >= 0){
+        fill(255, 0, 0);
+        rect(currentx, y+100, 40, value); 
+      } else {
+        fill(0, 255, 0);
+        rect(currentx, y + 100 - value, 40, value);
+      }
+      currentx += 40;
+    }
 
     //???WRITE THIS METHOD FIRST!!!
     //THESE ARE WRONG: They just illustrate how they could look
+    /*
     fill(255, 0, 0);
     rect(x+40, y+100, 60, 50);
     fill(0, 255, 0);
     rect(x+120, y+50, 60, 50);
+    */
 
 
     //Width of the visualizer is 400!
